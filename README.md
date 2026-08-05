@@ -1,3 +1,11 @@
+[English](./README.en.md)
+
+<!-- codex-github-rules:bilingual-summary -->
+> **中文简介**：ChatGPT 提示词中文合集，新增 AIPRM 提示词
+>
+> **English summary**: A Chinese ChatGPT prompt collection with additional AIPRM prompts
+
+---
 # 🧠很棒的 ChatGPT 提示
 
 [![惊人的](https://camo.githubusercontent.com/abb97269de2982c379cbc128bba93ba724d8822bfbe082737772bd4feb59cb54/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667 "惊人的")](https://github.com/sindresorhus/awesome) [![轮船](https://raw.githubusercontent.com/steamship-core/python-client/main/badge.svg "轮船")](https://www.steamship.com/build?utm_source=github\&utm_medium=badge\&utm_campaign=awesome_gpt_prompts\&utm_id=awesome_gpt_prompts)
