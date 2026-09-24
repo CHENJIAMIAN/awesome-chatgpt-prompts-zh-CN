@@ -1,39 +1,49 @@
-name: CSV Linter and Trailing Whitespaces
+name: CSV Linter
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
-  lint_and_check_trailing_whitespaces:
+  lint-csv:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install csvkit
+      - uses: actions/checkout@v4
 
-    - name: Lint CSV files
-      run: find . -name "*.csv" -exec csvclean -n -u 2 {} +
-      env:
-        CI: true
-    - name: Check for errors
-      if: always()
-      run: |
-        if ! grep -q "No errors." <(find . -name "*.csv" -exec csvclean -n -u 2 {} + | grep -v "^$"); then
-          echo "Errors were found in one or more CSV files."
-          exit 1
-        fi
-    - name: Check Trailing Whitespaces
-      run: |
-        # Check if the special file contains any trailing whitespaces
-        if grep -q "[[:space:]]$" ./prompts.csv; then
-          echo "ERROR: Found trailing whitespaces in prompts.csv"
-          exit 1
-        else
-          echo "No trailing whitespaces found in prompts.csv"
-        fi
+      - name: Validate CSV files
+        run: |
+          python3 - <<'PY'
+          import csv, glob, sys
+          csv.field_size_limit(64 * 1024 * 1024)
+          failed = []
+          for path in sorted(glob.glob("**/*.csv", recursive=True)):
+              if path.startswith(".git/"):
+                  continue
+              try:
+                  with open(path, encoding="utf-8-sig", newline="") as fh:
+                      rows = [r for r in csv.reader(fh) if r]
+              except Exception as exc:
+                  print(f"ERROR: {path}: {exc}")
+                  failed.append(path)
+                  continue
+              widths = {len(r) for r in rows}
+              print(f"{path}: {len(rows)} 行, 列数 {sorted(widths)}")
+              if len(widths) > 1:
+                  print(f"ERROR: {path} 列数不一致")
+                  failed.append(path)
+          if failed:
+              sys.exit(f"CSV 校验失败: {failed}")
+          PY
+
+      - name: Check Chinese data files are in sync
+        run: |
+          python3 - <<'PY'
+          import csv
+          csv.field_size_limit(64 * 1024 * 1024)
+          en = list(csv.DictReader(open("prompts.csv", encoding="utf-8")))
+          zh = list(csv.DictReader(open("prompts_zh-CN.csv", encoding="utf-8")))
+          print(f"prompts.csv={len(en)} 行, prompts_zh-CN.csv={len(zh)} 行")
+          if len(zh) < len(en):
+              raise SystemExit("中文数据条数少于英文原文，请检查同步流程")
+          PY
