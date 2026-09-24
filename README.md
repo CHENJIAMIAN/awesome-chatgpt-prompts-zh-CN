@@ -16,7 +16,7 @@
 
 **一句话说明**：把上游 [f/prompts.chat](https://github.com/f/prompts.chat)（原名 `awesome-chatgpt-prompts`，17 万+ stars）的**全部 2169 条提示词**翻译成简体中文，并把全部译文整理成 CSV / JSON / Markdown 三种可直接使用的形式；另外附上 **1536 条 AIPRM 提示词库快照**（2023 年抓取，含中英对照）。
 
-打开 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) 即可直接浏览全部中文提示词。
+打开 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)（全量索引）即可按分卷浏览全部中文提示词。
 
 ## ✨ 本次更新（2026-09-25）
 
@@ -25,7 +25,7 @@
 | 提示词条数 | 152 | **2172**（上游全量 + 3 条历史条目） |
 | 中文译文 | 2023 年的旧版机翻 | **全部重新翻译**，保留 Markdown 结构 / 代码块 / `{占位符}` / URL |
 | 英文源数据 | 2023-02 快照 | 与上游同步至 2026-09 |
-| 浏览方式 | 只有超长 README | 新增 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)（<details> 折叠，便于检索） |
+| 浏览方式 | 只有超长 README | 新增 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) 索引 + `prompts/part-NN.md` 分卷（每条 `<details>` 折叠，便于检索） |
 | 数据文件 | 只有旧版 CSV/JSON | CSV（中/英）、JSON（中/英）全部重建，字段与上游对齐 |
 | 仓库元数据 | 无 topics | 补齐 topics / 描述，便于在 GitHub 搜索中发现 |
 
@@ -33,7 +33,7 @@
 
 | 文件 | 说明 | 条目数 |
 | --- | --- | --- |
-| [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) | **全量中文提示词**（按上游顺序，可折叠展开） | 2172 |
+| [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) | **全量中文提示词索引**，正文按体积分卷到 `prompts/part-NN.md` | 2172 |
 | [prompts_zh-CN.csv](prompts_zh-CN.csv) | 中文数据表，列：`行动`,`提示`（UTF-8，全部字段加引号） | 2172 |
 | [prompts.csv](prompts.csv) | 上游英文原文数据表，列：`act`,`prompt`,`for_devs`,`type`,`contributor` | 2169 |
 | [chatgpt_prompts-zh-CN.json](chatgpt_prompts-zh-CN.json) | 中文 JSON，字段：`cmd`,`act`,`tags`,`enable`,`prompt` | 2172 |
@@ -44,7 +44,7 @@
 
 ## 🚀 怎么用
 
-**1）直接找提示词**：打开 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)，点开对应条目复制；也可在本仓库页面按 `t` 打开文件搜索、或 `Ctrl+F` 搜关键词（例如「面试」「SEO」「代码审查」）。
+**1）直接找提示词**：打开 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) 索引，进入某个分卷（`prompts/part-01.md` …）后点开条目复制；也可在本仓库页面按 `t` 打开文件搜索，或在分卷里用 `Ctrl+F` 搜关键词（例如「面试」「SEO」「代码审查」）。
 
 **2）当成数据集用**：
 

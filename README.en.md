@@ -15,7 +15,7 @@
 
 **A complete Simplified-Chinese edition of [f/prompts.chat](https://github.com/f/prompts.chat)** (formerly `awesome-chatgpt-prompts`, 170k+ stars): all **2169 upstream prompts translated into Chinese**, published as Markdown, CSV and JSON, plus a **1,536-prompt AIPRM library snapshot** (bilingual, captured in 2023).
 
-Start here → **[PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)** (all Chinese prompts).  
+Start here → **[PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)** (index of all Chinese prompts, split into `prompts/part-NN.md` volumes).  
 Chinese readers: the default entry point is the [Chinese README](./README.md).
 
 ## ✨ What changed in the 2026-09-25 update
@@ -25,7 +25,7 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 | Prompts | 152 | **2172** (full upstream set + 3 legacy entries) |
 | Chinese text | 2023 machine translation | fully re-translated, preserving Markdown / code blocks / `{placeholders}` / URLs |
 | English source data | Feb-2023 snapshot | synced with upstream (Sep-2026) |
-| Browsing | one huge README | dedicated [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) with collapsible sections |
+| Browsing | one huge README | [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) index + `prompts/part-NN.md` volumes with collapsible sections |
 | Data files | legacy CSV/JSON | rebuilt CSV (zh/en) and JSON (zh/en), columns aligned with upstream |
 | Repo metadata | no topics | topics/description added so the repo is discoverable in GitHub search |
 
@@ -33,7 +33,7 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 
 | File | Description | Entries |
 | --- | --- | --- |
-| [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) | all Chinese prompts (collapsible, upstream order) | 2172 |
+| [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) | index of all Chinese prompts; full text split into `prompts/part-NN.md` | 2172 |
 | [prompts_zh-CN.csv](prompts_zh-CN.csv) | Chinese CSV — `行动`,`提示` | 2172 |
 | [prompts.csv](prompts.csv) | upstream English CSV — `act`,`prompt`,`for_devs`,`type`,`contributor` | 2169 |
 | [chatgpt_prompts-zh-CN.json](chatgpt_prompts-zh-CN.json) | Chinese JSON — `cmd`,`act`,`tags`,`enable`,`prompt` | 2172 |
@@ -43,7 +43,7 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 
 ## 🚀 Usage
 
-- Browse/copy: open [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) and use `Ctrl+F`/`t` to search (e.g. "面试", "SEO", "代码审查").
+- Browse/copy: open the [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) index, jump into a `prompts/part-NN.md` volume and use `Ctrl+F` to search (e.g. "面试", "SEO", "代码审查").
 - As a dataset:
 
 ```bash
