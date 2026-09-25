@@ -13,7 +13,7 @@
 ![Upstream sync](https://img.shields.io/badge/upstream%20sync-2026--09--25-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)
 
-**A complete Simplified-Chinese edition of [f/prompts.chat](https://github.com/f/prompts.chat)** (formerly `awesome-chatgpt-prompts`, 170k+ stars): all **2169 upstream prompts translated into Chinese**, published as Markdown, CSV and JSON, plus a **1,536-prompt AIPRM library snapshot** (bilingual, captured in 2023).
+**A complete Simplified-Chinese edition of [f/prompts.chat](https://github.com/f/prompts.chat)** (formerly `awesome-chatgpt-prompts`, 170k+ stars): all **2169 upstream prompts translated into Chinese**, published as Markdown, CSV and JSON, plus a **1,536-prompt AIPRM library snapshot** (captured in 2023, Chinese re-translated in 2026-09).
 
 Start here → **[PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)** (index of all Chinese prompts, split into `prompts/part-NN.md` volumes).  
 Chinese readers: the default entry point is the [Chinese README](./README.md).
@@ -28,6 +28,7 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 | Browsing | one huge README | [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) index + `prompts/part-NN.md` volumes with collapsible sections |
 | Data files | legacy CSV/JSON | rebuilt CSV (zh/en) and JSON (zh/en), columns aligned with upstream |
 | Repo metadata | no topics | topics/description added so the repo is discoverable in GitHub search |
+| AIPRM Chinese | 2023 machine translation, with a misaligned/truncated YAML | **all 1,536 prompts re-translated**; YAML rebuilt in the English file's row order |
 
 ## 📦 Repository layout
 
@@ -38,7 +39,8 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 | [prompts.csv](prompts.csv) | upstream English CSV — `act`,`prompt`,`for_devs`,`type`,`contributor` | 2169 |
 | [chatgpt_prompts-zh-CN.json](chatgpt_prompts-zh-CN.json) | Chinese JSON — `cmd`,`act`,`tags`,`enable`,`prompt` | 2172 |
 | [chatgpt_prompts.json](chatgpt_prompts.json) | English JSON (same schema) | 2169 |
-| `Aiprm_Prompts*.json` / `*.yml` / `*_txt*.txt` | AIPRM prompt-library snapshot, English and bilingual | 1,536 |
+| `Aiprm_Prompts*.json` / `*.yml` | AIPRM snapshot, English and bilingual (`PromptZh` re-translated in 2026-09) | 1,536 |
+| `Aiprm_Prompts_txt*.txt` | 2023 "title + teaser" text dump — a different snapshot (3,652 rows), left untouched | 3,652 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) / [LICENSE](LICENSE) | inherited from upstream (CC0-1.0) | — |
 
 ## 🚀 Usage
@@ -70,7 +72,9 @@ curl -O https://raw.githubusercontent.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh
 - **`prompts.csv` is the source of truth**; rows are aligned by index with the Chinese files.
 - The upstream list is community-curated and uneven: duplicate, placeholder-ish or low-quality entries (`Test`, `reviews`, …) are kept as-is rather than silently dropped. `STRUCTURED` entries are JSON/YAML-style specs; `IMAGE` entries target image models.
 - Corrections and new Chinese prompts are welcome via [issues](https://github.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh-CN/issues) / PRs.
-- The AIPRM snapshot dates from January 2023 (later library contents require a logged-in account).
+- AIPRM: the JSON/YAML files are one January-2023 snapshot (1,536 prompts); its **Chinese translations were fully redone on 2026-09-25 with `deepseek-v4.1-flash`**, replacing the flawed 2023 output (the Chinese YAML was also re-aligned with the English row order).
+- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` come from a **different scrape** (3,652 title+teaser rows) and cannot be mapped onto the 1,536-prompt JSON, so they are kept as-is.
+- Later AIPRM library content requires a logged-in account, so the 1,536-prompt snapshot has not been extended.
 
 ## 🔗 Links
 

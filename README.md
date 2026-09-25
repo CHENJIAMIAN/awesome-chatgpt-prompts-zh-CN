@@ -14,7 +14,7 @@
 ![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC0--1.0-lightgrey?style=flat-square)
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome)
 
-**一句话说明**：把上游 [f/prompts.chat](https://github.com/f/prompts.chat)（原名 `awesome-chatgpt-prompts`，17 万+ stars）的**全部 2169 条提示词**翻译成简体中文，并把全部译文整理成 CSV / JSON / Markdown 三种可直接使用的形式；另外附上 **1536 条 AIPRM 提示词库快照**（2023 年抓取，含中英对照）。
+**一句话说明**：把上游 [f/prompts.chat](https://github.com/f/prompts.chat)（原名 `awesome-chatgpt-prompts`，17 万+ stars）的**全部 2169 条提示词**翻译成简体中文，并把全部译文整理成 CSV / JSON / Markdown 三种可直接使用的形式；另外附上 **1536 条 AIPRM 提示词库快照**（2023 年抓取，中文译文已于 2026-09 重新翻译）。
 
 打开 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md)（全量索引）即可按分卷浏览全部中文提示词。
 
@@ -28,6 +28,7 @@
 | 浏览方式 | 只有超长 README | 新增 [PROMPTS.zh-CN.md](PROMPTS.zh-CN.md) 索引 + `prompts/part-NN.md` 分卷（每条 `<details>` 折叠，便于检索） |
 | 数据文件 | 只有旧版 CSV/JSON | CSV（中/英）、JSON（中/英）全部重建，字段与上游对齐 |
 | 仓库元数据 | 无 topics | 补齐 topics / 描述，便于在 GitHub 搜索中发现 |
+| AIPRM 中文 | 2023 年旧机翻，且中文 YAML 行序错位、部分条目被截断 | **1536 条全部重译**，YAML 按英文文件行序重建（与 JSON 逐条对齐） |
 
 ## 📦 仓库内容
 
@@ -38,8 +39,9 @@
 | [prompts.csv](prompts.csv) | 上游英文原文数据表，列：`act`,`prompt`,`for_devs`,`type`,`contributor` | 2169 |
 | [chatgpt_prompts-zh-CN.json](chatgpt_prompts-zh-CN.json) | 中文 JSON，字段：`cmd`,`act`,`tags`,`enable`,`prompt` | 2172 |
 | [chatgpt_prompts.json](chatgpt_prompts.json) | 英文 JSON（同上结构） | 2169 |
-| [Aiprm_Prompts.json](Aiprm_Prompts.json) / [Aiprm_Prompts-Prompt-zh-CN.json](Aiprm_Prompts-Prompt-zh-CN.json) | AIPRM 提示词库快照（英 / 中英对照 JSON，含作者、分类、社区字段） | 1536 |
-| [Aiprm_Prompts Prompt-zh-CN.yml](Aiprm_Prompts%20Prompt-zh-CN.yml) / [Aiprm_Prompts_Prompt.yml](Aiprm_Prompts_Prompt.yml) / [Aiprm_Prompts_txt.txt](Aiprm_Prompts_txt.txt) / [Aiprm_Prompts_txt_zh.txt](Aiprm_Prompts_txt_zh.txt) | AIPRM 提示词的中文 / 英文纯文本与 YAML 版本 | 1536 |
+| [Aiprm_Prompts.json](Aiprm_Prompts.json) / [Aiprm_Prompts-Prompt-zh-CN.json](Aiprm_Prompts-Prompt-zh-CN.json) | AIPRM 提示词库快照（英 / 中英对照 JSON，含作者、分类、社区字段）；`PromptZh` 于 2026-09 重译 | 1536 |
+| [Aiprm_Prompts Prompt-zh-CN.yml](Aiprm_Prompts%20Prompt-zh-CN.yml) / [Aiprm_Prompts_Prompt.yml](Aiprm_Prompts_Prompt.yml) | AIPRM 提示词的中文 / 英文 YAML（每行一条，中英行序一致） | 1536 |
+| [Aiprm_Prompts_txt.txt](Aiprm_Prompts_txt.txt) / [Aiprm_Prompts_txt_zh.txt](Aiprm_Prompts_txt_zh.txt) | 2023 年抓取的「标题 + 摘要」纯文本清单（另一份快照，见下方说明） | 3652 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) / [LICENSE](LICENSE) | 沿用上游（CC0-1.0） | — |
 
 ## 🚀 怎么用
@@ -151,7 +153,9 @@ print(len(rows), rows[0]["行动"])   # -> 2172 Linux 终端
 - **原文以 [prompts.csv](prompts.csv) 为准**；译文与原文逐条对应，同一个 `act` 字段可通过行序对齐。
 - 上游是社区众包列表，条目质量参差、存在重复与低质量条目（例如占位用的 `Test`、`reviews`），本仓库如实保留，未做主观删减；`结构化提示词` 多为 JSON/YAML 形式的输入输出定义，`图像生成提示词` 面向绘图模型。
 - 发现翻译错误、术语不一致或想补充新提示词：欢迎提交 [Issue](https://github.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh-CN/issues) 或 PR（新增/修改中文译文即可）。
-- AIPRM 快照为 2023 年 1 月抓取，此后 AIPRM 的提示词库需登录访问，故未再更新。
+- AIPRM 部分：JSON 与 YAML 为 2023 年 1 月抓取的同一份快照（1536 条），其**中文译文于 2026-09-25 用 `deepseek-v4.1-flash` 全部重译**（替换 2023 年的旧机翻；中文 YAML 同时修正了行序错位与条目截断问题）。
+- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` 是**另一份抓取结果**（3652 条「标题 + 摘要」清单，与上面 1536 条 JSON 无法逐条对应），因此保持 2023 年原样、未做改动。
+- AIPRM 的提示词库后续需登录访问，故 1536 条快照未再扩充。
 
 ## 🔗 相关链接
 
