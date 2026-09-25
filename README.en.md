@@ -40,7 +40,7 @@ Chinese readers: the default entry point is the [Chinese README](./README.md).
 | [chatgpt_prompts-zh-CN.json](chatgpt_prompts-zh-CN.json) | Chinese JSON — `cmd`,`act`,`tags`,`enable`,`prompt` | 2172 |
 | [chatgpt_prompts.json](chatgpt_prompts.json) | English JSON (same schema) | 2169 |
 | `Aiprm_Prompts*.json` / `*.yml` | AIPRM snapshot, English and bilingual (`PromptZh` re-translated in 2026-09) | 1,536 |
-| `Aiprm_Prompts_txt*.txt` | 2023 "title + teaser" text dump — a different snapshot (3,652 rows), left untouched | 3,652 |
+| `Aiprm_Prompts_txt*.txt` | "title + teaser" text dump — a different snapshot (3,652 rows); Chinese re-translated in 2026-09, block-aligned with the English file | 3,652 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) / [LICENSE](LICENSE) | inherited from upstream (CC0-1.0) | — |
 
 ## 🚀 Usage
@@ -73,7 +73,7 @@ curl -O https://raw.githubusercontent.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh
 - The upstream list is community-curated and uneven: duplicate, placeholder-ish or low-quality entries (`Test`, `reviews`, …) are kept as-is rather than silently dropped. `STRUCTURED` entries are JSON/YAML-style specs; `IMAGE` entries target image models.
 - Corrections and new Chinese prompts are welcome via [issues](https://github.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh-CN/issues) / PRs.
 - AIPRM: the JSON/YAML files are one January-2023 snapshot (1,536 prompts); its **Chinese translations were fully redone on 2026-09-25 with `deepseek-v4.1-flash`**, replacing the flawed 2023 output (the Chinese YAML was also re-aligned with the English row order).
-- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` come from a **different scrape** (3,652 title+teaser rows) and cannot be mapped onto the 1,536-prompt JSON, so they are kept as-is.
+- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` come from a **different scrape** (3,652 title+teaser rows) that cannot be mapped onto the 1,536-prompt JSON; they are kept as a separate snapshot, and the **Chinese version was fully re-translated on 2026-09-25** with the same block count and separator structure as the English file.
 - Later AIPRM library content requires a logged-in account, so the 1,536-prompt snapshot has not been extended.
 
 ## 🔗 Links

@@ -41,7 +41,7 @@
 | [chatgpt_prompts.json](chatgpt_prompts.json) | 英文 JSON（同上结构） | 2169 |
 | [Aiprm_Prompts.json](Aiprm_Prompts.json) / [Aiprm_Prompts-Prompt-zh-CN.json](Aiprm_Prompts-Prompt-zh-CN.json) | AIPRM 提示词库快照（英 / 中英对照 JSON，含作者、分类、社区字段）；`PromptZh` 于 2026-09 重译 | 1536 |
 | [Aiprm_Prompts Prompt-zh-CN.yml](Aiprm_Prompts%20Prompt-zh-CN.yml) / [Aiprm_Prompts_Prompt.yml](Aiprm_Prompts_Prompt.yml) | AIPRM 提示词的中文 / 英文 YAML（每行一条，中英行序一致） | 1536 |
-| [Aiprm_Prompts_txt.txt](Aiprm_Prompts_txt.txt) / [Aiprm_Prompts_txt_zh.txt](Aiprm_Prompts_txt_zh.txt) | 2023 年抓取的「标题 + 摘要」纯文本清单（另一份快照，见下方说明） | 3652 |
+| [Aiprm_Prompts_txt.txt](Aiprm_Prompts_txt.txt) / [Aiprm_Prompts_txt_zh.txt](Aiprm_Prompts_txt_zh.txt) | 「标题 + 摘要」纯文本清单（另一份快照；中文版 2026-09 重译，与英文版逐块对齐） | 3652 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) / [LICENSE](LICENSE) | 沿用上游（CC0-1.0） | — |
 
 ## 🚀 怎么用
@@ -154,7 +154,7 @@ print(len(rows), rows[0]["行动"])   # -> 2172 Linux 终端
 - 上游是社区众包列表，条目质量参差、存在重复与低质量条目（例如占位用的 `Test`、`reviews`），本仓库如实保留，未做主观删减；`结构化提示词` 多为 JSON/YAML 形式的输入输出定义，`图像生成提示词` 面向绘图模型。
 - 发现翻译错误、术语不一致或想补充新提示词：欢迎提交 [Issue](https://github.com/CHENJIAMIAN/awesome-chatgpt-prompts-zh-CN/issues) 或 PR（新增/修改中文译文即可）。
 - AIPRM 部分：JSON 与 YAML 为 2023 年 1 月抓取的同一份快照（1536 条），其**中文译文于 2026-09-25 用 `deepseek-v4.1-flash` 全部重译**（替换 2023 年的旧机翻；中文 YAML 同时修正了行序错位与条目截断问题）。
-- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` 是**另一份抓取结果**（3652 条「标题 + 摘要」清单，与上面 1536 条 JSON 无法逐条对应），因此保持 2023 年原样、未做改动。
+- `Aiprm_Prompts_txt.txt` / `Aiprm_Prompts_txt_zh.txt` 是**另一份抓取结果**（3652 条「标题 + 摘要」清单，与上面 1536 条 JSON 无法逐条对应），作为独立快照保留；其**中文版已于 2026-09-25 用同一模型全部重译**，块数（3652）与分隔结构同英文版完全一致，可逐行对照。
 - AIPRM 的提示词库后续需登录访问，故 1536 条快照未再扩充。
 
 ## 🔗 相关链接
