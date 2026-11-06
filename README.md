@@ -108,6 +108,8 @@ print(len(rows), rows[0]["行动"])   # -> 2172 Linux 终端
 > 使用 HTML5 Canvas、CSS3 和 JavaScript 开发一个基于网页的图像编辑器。创建一个具备工具面板和预览区域的专业化界面。实现基础调整功能，包括亮度、对比度、饱和度和锐度。添加可自定义参数并支持实时预览的滤镜。包含带宽高比控制的裁剪与缩放功能。实现文本叠加功能，支持字体选择与样式设置。添加形状绘制工具，并提供填充与描边选项。包含图层管理功能，并支持混合模式。支持以多种格式与质量导出图像。创建响应式设计，使其能随屏幕尺寸自适应。添加支持历史状态的撤销/重做功能。
 
 ### MCP Builder（原文标题：`MCP Builder`）
+- [PromptImage](https://promptimage.cloud)：Free AI image & video studio with a prompt library (signup credits, multi-model). Freemium
+- [GrokVideo Studio](https://grokvideogenerator.dev)：Independent web app for text/image-to-video via Grok Imagine API (Free Trial, 20 credits). Not an official …
 
 > ---
 > name: mcp-builder
